@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Love</title>
+  <style>
+    @font-face {
+      font-family: 'Hurricane';
+      src: url('Mali-Light.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+      font-family: 'Hurricane', sans-serif;
+    }
+
+    video {
+      width: 80%;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .back-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: 'Hurricane', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+    }
+
+    /* ปุ่มเล่นใต้วิดีโอ */
+    .play-button {
+      margin-top: 45px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      font-family: 'Hurricane', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .play-button:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- วิดีโอ -->
+  <video id="myVideo" controls>
+    <source src="video/my_love.mp4" type="video/mp4">
+    เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+  </video>
+
+  <!-- ปุ่มเล่นใต้วิดีโอ -->
+  <button class="play-button" onclick="togglePlay()">เล่น</button>
+
+  <!-- ปุ่มกลับ -->
+  <button class="back-button" onclick="history.back()">กลับ</button>
+
+  <script>
+    const video = document.getElementById('myVideo');
+
+    function togglePlay() {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  </script>
+</body>
+
+</html>
